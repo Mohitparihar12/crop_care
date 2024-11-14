@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+body{
+    /* background: #F09819;  
+background: -webkit-linear-gradient(to right, #EDDE5D, #F09819); 
+background: linear-gradient(to right, #EDDE5D, #F09819); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-image: url('./p&d/back.avif');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+font-family: Nanum Myeong, sans-serif;
+
+}
+.card img{
+    width: 6rem;
+    height: 6rem;
+    
+}
+.card h2{
+    color: black;
+    font-size: 1.5rem;
+    
+}
+.content p{
+    
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.card p,a{
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+p{
+    color: rgb(228, 219, 219);
+}
+hr{
+    color: rgb(228, 219, 219);
+    width: 100%;
+    margin-top: 0;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+
+    background-size: cover;
+    
+}
+.card{
+    margin-top: 2rem;
+  width: 15rem;
+  height: 20rem;
+  background-color: rgba(255,255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  border-radius: 1.5rem;
+  flex-direction: column;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  
+  }
+
+
+
+  .cardparent{
+    display: flex; gap:1rem;flex-wrap:wrap;justify-content: center;}
+  h2{
+  font-size: 1.5rem;
+  color: rgb(228, 219, 219);
+  font-weight: 500;
+}
+.one-stage img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+}
+h1{
+    color: white;
+    font-weight: 500;
+}
+label{
+    color: white;
+}
+button{
+    border-radius: 5px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">
+        Pests and diseases
+    </h1>
+    <div class="container" style="text-align: center;">
+    <label for="crop">Select Crop:</label>
+    <select id="crop">
+        <option value="">Select...</option>
+        <option value="melon">Melon</option>
+        <option value="wheat">Wheat</option>
+        <option value="peanut">Peanut</option>
+        <option value="maize">maize</option>
+        <option value="rice">Rice</option>
+    </select>
+    <button onclick="changeText()">Submit</button>
+    
+</div>
+<script>
+    function changeText(){
+    const cropval=crop.value;
+    
+    switch(cropval){
+        case "melon":
+            window.location.href="p&d-melon.html";
+            break;
+        case "wheat":
+            window.location.href="p&d-wheat.html";
+            break;
+        case "peanut":
+            window.location.href="p&d-peanut.html";
+            break;
+        case "maize":
+            window.location.href="p&d-maize.html";
+            break;
+        case "rice":
+            window.location.href="p&d-rice.html";
+            break;
+       
+    }
+}
+    </script>
+</body>
+</html>

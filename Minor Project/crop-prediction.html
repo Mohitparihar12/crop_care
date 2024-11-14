@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    
+
+<style>
+    body{
+        background-image: url('./Assets/mont.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+      }
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 20vw;
+      margin: 0 auto;  
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      align-items: center;
+      background-color: white;
+      
+    }
+    form{
+        text-align: center;
+    }
+    .form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .form  button {
+        background-image: linear-gradient(120deg, #167881 0%, #181c1e 100%);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+     h1{
+        text-align: center;
+        color: black;
+        font-family:cursive;
+    }
+    </style>
+<body>
+    
+  <h1>
+    Enter your soil details 
+  </h1>
+    <div class="form">
+        <form action="" method="">
+      <label for="n" name="n">Nitrogen</label>
+      <input type="text" id="n">
+    
+      <label for="p" name="p">Phosphorous</label>
+      <input type="text" id="p">
+    
+      <label for="k" name="k">Potassium</label>
+      <input type="text" id="k">
+    
+      <label for="temp" name="n">Temperature</label>
+      <input type="text" id="temp">
+    
+      <label for="humidity" name="humidity">Humidity</label>
+      <input type="text" id="humidity">
+    
+      <label for="rainfall" name="rainfall">Rainfall in mm</label>
+      <input type="text" id="humidity">
+    
+      <label for="ph" name="ph">PH</label>
+      <input type="text" id="ph">
+    
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>

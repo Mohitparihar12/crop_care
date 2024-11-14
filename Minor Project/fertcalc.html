@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizer Calculator</title>
+  <link rel="stylesheet" href="fertcalc.css">
+</head>
+<body>
+  <center><h1>Fertilizer Calculator</h1></center>
+  <div class="calculator">
+    <label for="crop">Select Crop:</label>
+    <select id="crop">
+      <option value="">Select...</option>
+      <option value="apple">Apple</option>
+      <option value="maize">Maize</option>
+      <option value="wheat">Wheat</option>
+      <option value="potato">Potato</option>
+      <option value="rice">Rice</option>
+    </select>
+
+    <label for="fieldArea">Field Area (acres):</label>
+    <input type="number" id="fieldArea" min="0" required>
+
+    <h2>Fertilizers (bags/acre):</h2>
+    <label for="dap">DAP:</label>
+    <input type="number" id="dap" disabled>
+    <label for="mop">MOP:</label>
+    <input type="number" id="mop" disabled>
+    <label for="urea">Urea:</label>
+    <input type="number" id="urea" disabled>
+
+    <button onclick="calculateFertilizers()">Calculate</button>
+  </div>
+
+  <script>
+    const cropSelect = document.getElementById('crop');
+    const fieldAreaInput = document.getElementById('fieldArea');
+    const dapInput = document.getElementById('dap');
+    const mopInput = document.getElementById('mop');
+    const ureaInput = document.getElementById('urea');
+
+    const nutrientRecommendations = {
+      apple: { nitrogen: 120, phosphorus: 60, potassium: 80 },
+      maize: { nitrogen: 150, phosphorus: 60, potassium: 80 },
+      wheat: { nitrogen: 100, phosphorus: 40, potassium: 60 },
+      potato: { nitrogen: 170, phosphorus: 80, potassium: 140 },
+      rice: { nitrogen: 120, phosphorus: 40, potassium: 30 }
+    };
+
+    const fertilizerConversionRates = {
+      urea: { nitrogen: 46, bagWeight: 50 },
+      dap: { nitrogen: 18, phosphorus: 46, bagWeight: 50 },
+      mop: { potassium: 60, bagWeight: 50 }
+    };
+
+    function calculateFertilizers() {
+      const selectedCrop = cropSelect.value;
+      const fieldArea = parseFloat(fieldAreaInput.value);
+
+      if (!selectedCrop) {
+        alert('Please select a crop');
+        return;
+      }
+
+      const nutrients = nutrientRecommendations[selectedCrop];
+
+      if (!nutrients) {
+        alert('Nutrient recommendations not available for the selected crop');
+        return;
+      }
+
+      const { nitrogen, phosphorus, potassium } = nutrients;
+
+      // Calculate fertilizer quantities based on nutrient requirement and fertilizer conversion rates
+
+      // Urea: kg required / (nitrogen content * 0.01 * bag weight)
+      const ureaBags = (nitrogen * fieldArea) / (fertilizerConversionRates.urea.nitrogen * 0.01 * fertilizerConversionRates.urea.bagWeight);
+
+      // DAP: kg required / (phosphorus content * 0.01 * bag weight)
+      const dapBags = (phosphorus * fieldArea) / (fertilizerConversionRates.dap.phosphorus * 0.01 * fertilizerConversionRates.dap.bagWeight);
+
+      // MOP: kg required / (potassium content * 0.01 * bag weight)
+      const mopBags = (potassium * fieldArea) / (fertilizerConversionRates.mop.potassium * 0.01 * fertilizerConversionRates.mop.bagWeight);
+
+      // Update input fields with the calculated values
+      ureaInput.value = ureaBags.toFixed(1);
+      dapInput.value = dapBags.toFixed(1);
+      mopInput.value = mopBags.toFixed(1);
+    }
+    
+  </script>
+
+</body>
+</html>

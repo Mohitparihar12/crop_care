@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(58, 57, 57);
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+}
+
+.Img {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.contain {
+    background-color: rgb(237, 243, 243);
+    color: black;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 20px; /* Add padding for better spacing */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+}
+
+img {
+    margin-top: 20px; /* Adjust margin-top */
+    height: auto; /* Allow image to maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+}
+
+p {
+    margin-top: 20px; /* Adjust margin-top */
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    line-height: 2; /* Increase line-height for better readability */
+}
+
+h1 {
+    font-size: 4rem;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+h2{
+    color:red;
+}
+#img{
+    margin-top: 20px; /* Adjust margin-top */
+    height: auto; /* Allow image to maintain aspect ratio */
+    width: 100%; /* Ensure image doesn't exceed container width */
+}

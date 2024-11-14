@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color: green;
+    padding: 15px ;
+    display: flex;
+    align-items: center;
+
+}
+nav ul {
+    display: flex;
+    margin-left: 60vh;
+
+}
+nav ul li{
+    list-style: none;
+    padding: 15px 10px ;
+    margin: 1px 3px;
+}
+nav ul li a{
+    text-decoration:solid;
+    color: white;
+    font-family: "Inconsolata", monospace; 
+    
+    font-weight:bold;
+    font-size: larger;
+}
+
+#number{
+    color:black;
+}
+#serv{
+    background-color: orange;
+    padding: 18px 10px;
+}
+#Crop{
+    background-color: orange;
+}
+
+#number{
+    margin-left: 10px;
+    color:black
+}
+.ic{
+    display: inline;
+
+}
+.abovenav{
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.ic ul{
+    list-style:none;
+    display: inline-flex;
+    
+}
+.ic ul li{
+    margin: 3px;
+
+}
+.ic ul li i{
+    min-width: 30px;
+   min-height: 30px;
+   margin-top: 3px;
+}
+.abovenav span{
+    margin-top: 3px;
+}
+#number{
+    font-family: "Inconsolata", monospace;
+    font-weight: 700;
+    font-size: 30px;
+}
+#CompanyName p {
+    display: inline;
+    font-size: 30px;
+    font-family: "Inconsolata", monospace ;
+    font-weight: 700;
+}
+#CompanyName p span{
+    color: orange;
+    font-family: "Inconsolata", monospace ;
+    font-weight: 700;
+    font-size: 30px;
+}
+.imgSlider img{
+    min-width: 100vh;
+}
+.LinkToPg{
+    display: flex;
+    justify-content:center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.LinkToPg span{
+    padding: 20px;
+    background-color: orange;
+    margin: 1px;
+    border-radius: 15%;
+
+
+}
+.LinkToPg span a{
+    text-decoration: none;
+    color: white;
+    font-family: "Inconsolata", monospace ;
+    font-weight: 700;
+    font-size:20px;
+
+}
+.card-btn{
+    background-color: green;
+    padding:0.375em;
+    color:white;
+    text-decoration: none;
+    border-radius: 3px;
+}

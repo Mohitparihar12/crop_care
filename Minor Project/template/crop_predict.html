@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Prediction</title>
+</head>
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+  *{
+    font-family: "Montserrat";
+  }
+body {
+    background-image: url('../Assets/cp-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    align-items: center;
+    background-color: rgba(255,255,255,0.6);
+
+  }
+  .form .formEle{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  .form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    
+  }
+
+  .form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: (255,255,255,0.6);
+  }
+
+  .form button {
+    background-image: linear-gradient(120deg, #167881 0%, #181c1e 100%);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Montserrat";
+
+  }
+
+  h1 {
+    text-align: center;
+    color: black;
+    font-family: 'Montserrat';
+  }
+  #predictedCrop{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    align-items: center;
+    background-color:  rgba(255,255,255,0.6);;
+    display: none;
+  }
+  #predictedCrop h2{
+    text-align: center;
+
+  }
+  #predictedCrop button{
+    padding: 5px 20px;
+    margin-top: 10px;
+    font-size: .8em;
+    cursor: pointer;
+    background-color: #2081c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  #cropImg{
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+  }
+
+</style>
+
+<body>
+
+  <div id="cropForm">
+  
+    <form class="form" id="predictionForm">
+      <h1>
+        Enter your soil details
+      </h1>
+     <div class="formEle">
+      <label for="nitrogen">Nitrogen:</label>
+      <input type="number" name="nitrogen" id="nitrogen" step="any" required><br>
+      <label for="phosphorous">Phosphorous:</label>
+      <input type="number" name="phosphorous" id="phosphorous" step="any" required><br>
+      <label for="potassium">Potassium:</label>
+      <input type="number" name="potassium" id="potassium" step="any" required><br>
+      <label for="temperature">Temperature:</label>
+      <input type="number" name="temperature" id="temperature" step="any" required><br>
+      <label for="humidity">Humidity:</label>
+      <input type="number" name="humidity" id="humidity" step="any" required><br>
+      <label for="rainfall">Rainfall:</label>:</label>
+      <input type="number" name="rainfall" id="rainfall" step="any" required><br>
+      <label for="ph">pH:</label>
+      <input type="number" name="ph" id="ph" step="any" required>
+     </div>
+      <button type="button" style="display: block;" id="predict-button">Predict</button>
+    </form>
+  </div>
+  <div id="predictedCrop">
+    <h2 id="predictionResult"></h2>
+    <img id="cropImg" src="" alt="crop image">
+    <button type="button" onclick="changeCropDiv('back')">Back</button>
+  </div>
+
+  <script>
+   const imageObject= {
+      "apple": '../Assets/fasal/apple.jpg',
+      "wheat": '../Assets/fasal/Wheat.jpg',
+      "rice": '../Assets/fasal/rice.jpg',
+      "barley": '../Assets/fasal/barley.jpg',
+      "blackgram": '../Assets/fasal/blackgram.webp',
+      "chickpea": '../Assets/fasal/chickpea.webp',
+      "kidneybeans": '../Assets/fasal/kindneybeans.jpeg',
+      "lentil": '../Assets/fasal/lentil.jpeg',
+      "maize": '../Assets/fasal/maize.jpg',
+      "millet": '../Assets/fasal/millet.webp',
+      "pigeonpeas": '../Assets/fasal/piegonpeas.png',
+      "watermelon": '../Assets/fasal/sliced-watermelon-25612609.webp',
+      "coconut": '../Assets/fasal/coconut.jpg',
+      "banana": '../Assets/fasal/banan.avif',
+      "coffee": '../Assets/fasal/coffee.jpg',
+      "cotton": '../Assets/fasal/cotton.jpg',
+      "grapes": '../Assets/fasal/grapes.jpg',
+      "jute": '../Assets/fasal/jute.jpeg',
+      "mango": '../Assets/fasal/mango.jpg',
+      "mothbeans": '../Assets/fasal/moth-beans.jpg',
+      "mungbean": '../Assets/fasal/mungbean.jpg',
+      "orange": '../Assets/fasal/orange.webp',
+      "papaya": '../Assets/fasal/papaya.jpg',
+      "muskmelon": '../Assets/fasal/muskmelon.jpeg',
+      "pomegranate": '../Assets/fasal/pomogranate.webp',
+    }
+    const cropImg = document.getElementById("cropImg");
+    document.getElementById('predict-button').addEventListener('click', async function () {
+      const formData = {
+        nitrogen: document.getElementById('nitrogen').value,
+        phosphorous: document.getElementById('phosphorous').value,
+        potassium: document.getElementById('potassium').value,
+        temperature: document.getElementById('temperature').value,
+        humidity: document.getElementById('humidity').value,
+        rainfall: document.getElementById('rainfall').value,
+        ph: document.getElementById('ph').value
+      };
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            redicted: 'manual',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        // var data
+        // var http = new XMLHttpRequest();
+        // var url = 'http://127.0.0.1:5000/predict';
+        // http.open('POST', url, true);
+
+        // //Send the proper header information along with the request
+        // http.setRequestHeader('Content-type', 'application/json');
+
+        // http.onreadystatechange = function () {//Call a function when the state changes.
+        //   if (http.readyState == 4 && http.status == 200) {
+        //     data=http.responseText;
+        //   }
+        // }
+        // http.send(formData);
+
+        console.log('Response data:',imageObject,data);
+
+        const resultDiv = document.getElementById('predictionResult');
+        resultDiv.innerHTML = `<h2>Predicted Crop: ${data.result}</h2>`;
+        cropImg.setAttribute("src", imageObject[data.result]);
+        changeCropDiv();
+      } catch (error) {
+        console.error('Fetch error:', error);
+
+        const resultDiv = document.getElementById('predictionResult');
+        resultDiv.innerHTML = `<h2>Predictions:</h2>`;
+        resultDiv.innerHTML += `<p>Error: ${error.message}</p>`;
+      }
+
+      // Prevent default form submission
+      return false;
+    });
+    const cropForm = document.getElementById('cropForm');
+    const predictedCrop = document.getElementById('predictedCrop');
+    function changeCropDiv(type=''){
+      if(type=='back'){
+        cropForm.style.display='flex';
+        predictedCrop.style.display='none'
+
+      }else{
+        cropForm.style.display='none';
+        predictedCrop.style.display='flex'
+      }
+    }
+  </script>
+</body>
+
+</html>

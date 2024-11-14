@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maize Pests and Diseases</title>
+  <link rel="stylesheet" href="p&d-crops.css"> </head>
+ 
+    <body>
+        <div class="container" style="text-align: center;">
+            <label for="crop">Select Crop:</label>
+            <select id="crop">
+                <option value="">Select...</option>
+                <option value="potato">Potato</option>
+                <option value="wheat">Wheat</option>
+                <option value="peanut">Peanut</option>
+                <option value="maize">maize</option>
+                <option value="rice">Rice</option>
+            </select>
+            <button onclick="changeText()">Submit</button>
+            
+        </div>
+        <h1 style="text-align: center;">Diseases by stages</h1>
+        <p style="text-align: center;">All Pests and Diseases that might appear in your crop at different stages</p>
+        <div class="main-div">
+          <div class="one-stage">
+            <img src="./Assets/cropimg/chickpeas.png" alt="" width="20" height="20" >
+            <h2 style="display: inline-block;">Seeding Stage</h2>
+            <div class="cardparent">
+              <div class="card">
+                <div class="content" style="background-image: url('./p&d/aphids.png')">
+                
+            </div>
+               <hr>
+               
+         
+                <h2>Insect</h2>
+                <a href="#">
+                <p>
+                    Aphids</a>
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Termites-peanuts.png')">
+                
+         
+                
+            </div>
+               <hr>
+               <h2>Insect</h2>
+                <a href="#">
+                <p>
+                    Termites
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Rot-andFoodrot.png')">
+                
+         
+                
+            </div>
+               <hr>
+               <h2>Fungus</h2>
+                <a href="#">
+                <p>
+                   Bottom Rot
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Root\ and\ Foot\ Rot.jpeg')">
+                
+         
+                
+            </div>
+               <hr>
+               <h2>Fungus</h2>
+                <a href="#">
+                <p>
+                   Root and Foot Rot
+                </p>
+            </a>
+            </div>
+            
+          </div>
+
+          <div class="one-stage">
+            <img src="./Assets/cropimg/chickpeas.png" alt="" width="20" height="20" >
+            <h2 style="display: inline-block;">Vegetative Stage</h2>
+            <div class="cardparent">
+              <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Northern\ leaf\ blight.jpeg')">
+                
+         
+               
+            </div>
+               <hr>
+               <h2>Fungus</h2>
+                <a href="#">
+                <p>
+                   Northern leaf blight
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content" style="background-image: url('./p&d/Common\ rust\ of\ maize.jpeg')">
+                
+         
+               
+            </div>
+               <hr>
+               <h2>Fungus</h2>
+                <a href="#">
+                <p>
+                   Common rust of maize
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Charcoal\ Stalk\ Rot.jpeg')">
+                
+         
+               
+            </div>
+               <hr>
+               <h2>Fungus</h2>
+                <a href="#">
+                <p>
+                    Charcoal Stalk Rot
+                </p>
+            </a>
+            </div>
+            <div class="card">
+                <div class="content"  style="background-image: url('./p&d/Souther\ Leaf\ Blight\ of\ Maize.jpeg')">
+                
+         
+               
+            </div>
+               <hr>
+               <h2>Bacteria</h2>
+                <a href="#">
+                <p>
+                    Southern Leaf Blight of Maize
+                </p>
+            </a>
+            </div>
+      
+            
+          </div>
+
+          <div class="one-stage">
+            <img src="./Assets/cropimg/chickpeas.png" alt="" width="20" height="20" >
+            <h2 style="display: inline-block;">Fruiting Stage</h2>
+            <div class="cardparent">
+                <div class="card">
+                    <div class="content"  style="background-image: url('./p&d/Common\ rust\ of\ maize.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Fungus</h2>
+                    <a href="#">
+                    <p>
+                       Common Rust of Maize
+                    </p>
+                </a>
+                </div>
+          
+                <div class="card">
+                    <div class="content"  style="background-image: url('./p&d/Charcoal\ Stalk\ Rot.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Fungus</h2>
+                    <a href="#">
+                    <p>
+                      Charcoal stalk rot
+                    </p>
+                </a>
+                </div>
+          
+                <div class="card">
+                    <div class="content" style="background-image: url('./p&d/Souther\ Leaf\ Blight\ of\ Maize.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Fungus</h2>
+                    <a href="#">
+                    <p>
+                      Southern Leaf Blight of Maize
+                    </p>
+                </a>
+                </div>
+          
+                <div class="card">
+                    <div class="content" style="background-image: url('./p&d/Banded\ Leaf\ and\ Sheath\ Blight.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Fungus</h2>
+                    <a href="#">
+                    <p>
+                        Banded Leaf and Sheath Blight</p>
+                </a>
+                </div>
+          
+          
+            </div>
+            <div class="one-stage">
+              <img src="./Assets/cropimg/chickpeas.png" alt="" width="20" height="20" >
+              <h2 style="display: inline-block;">Harvesting Stage</h2>
+              <div class="cardparent">
+                <div class="card">
+                    <div class="content" style="background-image: url('./p&d/Charcoal\ Stalk\ Rot.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Fungus</h2>
+                    <a href="#">
+                    <p>
+                       Charcoal Stalk Rot
+                    </p>
+                </a>
+                </div>
+                <div class="card">
+                    <div class="content " style="background-image: url('./p&d/Banded\ Leaf\ and\ Sheath\ Blight.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>insect</h2>
+                    <a href="#">
+                    <p>
+                       Banded Leaf and Sheath Blight
+                    </p>
+                </a>
+                </div>
+                <div class="card">
+                    <div class="content" style="background-image: url('./p&d/Spotted\ Stem\ borer.jpeg')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Insect</h2>
+                    <a href="#">
+                    <p>
+                       Spotted Stem borer
+                    </p>
+                </a>
+                </div>
+                <div class="card">
+                    <div class="content" style="background-image: url('./p&d/Fall\ Amyworm')">
+                    
+             
+                   
+                </div>
+                   <hr>
+                   <h2>Insect</h2>
+                    <a href="#">
+                    <p>
+                        Fall Amyworm
+                    </p>
+                </a>
+                </div>
+            
+              </div>
+        
+            
+          </div>
+        </div>
+        <script src="p&d.js"></script>
+</body>
+</html>

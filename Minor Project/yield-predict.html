@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yieldPrediction</title>
+  <link rel="stylesheet" href="yieldpred.css">
+</head>
+<body>
+
+  <div id="cropForm">
+  
+    <form class="form" id="predictionForm">
+      <h1>
+        Enter your crop details
+      </h1>
+      <label for="Cropsel">Select Crop</label>
+<select name="crop" id="Cropsel">
+    <option value="cotton-lint">Cotton (lint)</option>
+    <option value="coriander">Coriander</option>
+    <option value="castor-seed">Castor seed</option>
+    <option value="other-rabi-pulses">Other Rabi pulses</option>
+    <option value="arecanut">Arecanut</option>
+    <option value="small-millets">Small millets</option>
+    <option value="peas-beans-pulses">Peas & beans (Pulses)</option>
+    <option value="garlic">Garlic</option>
+    <option value="mesta">Mesta</option>
+    <option value="moth">Moth</option>
+    <option value="banana">Banana</option>
+    <option value="guar-seed">Guar seed</option>
+    <option value="sugarcane">Sugarcane</option>
+    <option value="turmeric">Turmeric</option>
+    <option value="jowar">Jowar</option>
+    <option value="ragi">Ragi</option>
+    <option value="cashewnut">Cashewnut</option>
+    <option value="sannhamp">Sannhamp</option>
+    <option value="other-summer-pulses">Other Summer Pulses</option>
+    <option value="groundnut">Groundnut</option>
+    <option value="safflower">Safflower</option>
+    <option value="arhar-tur">Arhar/Tur</option>
+    <option value="masoor">Masoor</option>
+    <option value="rice">Rice</option>
+    <option value="horse-gram">Horse-gram</option>
+    <option value="niger-seed">Niger seed</option>
+    <option value="barley">Barley</option>
+    <option value="other-kharif-pulses">Other Kharif pulses</option>
+    <option value="jute">Jute</option>
+    <option value="sesamum">Sesamum</option>
+    <option value="rapeseed-mustard">Rapeseed & Mustard</option>
+    <option value="tapioca">Tapioca</option>
+    <option value="khesari">Khesari</option>
+    <option value="dry-chillies">Dry chillies</option>
+    <option value="moong-green-gram">Moong (Green Gram)</option>
+    <option value="onion">Onion</option>
+    <option value="wheat">Wheat</option>
+    <option value="maize">Maize</option>
+    <option value="gram">Gram</option>
+    <option value="potato">Potato</option>
+    <option value="sweet-potato">Sweet potato</option>
+    <option value="ginger">Ginger</option>
+    <option value="urad">Urad</option>
+    <option value="other-oilseeds">Other oilseeds</option>
+    <option value="bajra">Bajra</option>
+    <option value="tobacco">Tobacco</option>
+    <option value="coconut">Coconut</option>
+    <option value="other-cereals">Other Cereals</option>
+    <option value="oilseeds-total">Oilseeds total</option>
+    <option value="linseed">Linseed</option>
+    <option value="cardamom">Cardamom</option>
+    <option value="sunflower">Sunflower</option>
+    <option value="cowpea-lobia">Cowpea (Lobia)</option>
+    <option value="soyabean">Soyabean</option>
+    <option value="black-pepper">Black pepper</option>
+</select>
+
+<label for="year">Enter Crop year</label>
+<input type="text" id="year">
+
+<label for="SeasonSel">Select Season</label>
+<select name="season" id="SeasonSel">
+ 
+    <option value="kharif">Kharif</option>
+    <option value="summer">Summer</option>
+    <option value="rabi">Rabi</option>
+    <option value="whole-year">Whole Year</option>
+    <option value="winter">Winter</option>
+    <option value="autumn">Autumn</option>
+</select>
+
+<label for="StateSel">Select State</label>
+<select name="state" id="StateSel">
+  
+    <option value="jammu-kashmir">Jammu and Kashmir</option>
+    <option value="sikkim">Sikkim</option>
+    <option value="mizoram">Mizoram</option>
+    <option value="bihar">Bihar</option>
+    <option value="goa">Goa</option>
+    <option value="kerala">Kerala</option>
+    <option value="punjab">Punjab</option>
+    <option value="meghalaya">Meghalaya</option>
+    <option value="maharashtra">Maharashtra</option>
+    <option value="uttar-pradesh">Uttar Pradesh</option>
+    <option value="chhattisgarh">Chhattisgarh</option>
+    <option value="andhra-pradesh">Andhra Pradesh</option>
+    <option value="karnataka">Karnataka</option>
+    <option value="jharkhand">Jharkhand</option>
+    <option value="assam">Assam</option>
+    <option value="telangana">Telangana</option>
+    <option value="gujarat">Gujarat</option>
+    <option value="tamil-nadu">Tamil Nadu</option>
+    <option value="puducherry">Puducherry</option>
+    <option value="haryana">Haryana</option>
+    <option value="nagaland">Nagaland</option>
+    <option value="tripura">Tripura</option>
+    <option value="himachal-pradesh">Himachal Pradesh</option>
+    <option value="arunachal-pradesh">Arunachal Pradesh</option>
+    <option value="odisha">Odisha</option>
+    <option value="west-bengal">West Bengal</option>
+    <option value="delhi">Delhi</option>
+    <option value="manipur">Manipur</option>
+    <option value="madhya-pradesh">Madhya Pradesh</option>
+    <option value="uttarakhand">Uttarakhand</option>
+</select>
+
+<label for="area">Enter Field Area(in hectares)</label>
+<input type="text" id="area">
+
+<label for="production">Enter Production(in metric tons)</label>
+<input type="text" id="production">
+
+<label for="rain">Enter Annual rainfall(in mm)</label>
+<input type="text" id="rain">
+
+<label for="fertilizer">Enter fertilizer(in kg)</label>
+<input type="text" id="fertilizer">
+
+<label for="pesticide">Enter Pesticide(in kg)</label>
+<input type="text" id="pesticide">
+
+<label for="yield">yield</label>
+<input type="text" id="yield">
+
+     <button id="submit">Submit</button>
+    </form>
+  </div>
+  
+ 
+  <script src="yieldpred.js"></script>
+</body>
+
+</html>
